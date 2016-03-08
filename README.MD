@@ -18,9 +18,9 @@ Or if security is enabled:
 
 Then you can start using it ! For example:
 
-`BlockchainInfo info = blockchain.getBlockchainInfo();
+`BlockchainInfo info = blockchain.getBlockchainInfo();`
 
-System.out.println(info.getHeight());`
+`System.out.println(info.getHeight());`
 
 All the methods are explained in the [Javadoc](doc/).
 
