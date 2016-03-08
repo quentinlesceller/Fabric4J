@@ -8,14 +8,20 @@ Add this project as maven dependency or simply import the jar located in the jar
 
 ## Usage
 
-OBC4J is extremely simple to use, just start by declaring it.
+OBC4J is extremely simple to use, just start by declaring it:
+
 `OpenBlockchain blockchain = new OpenBlockchain(server,port)`
-Or if security is enabled
+
+Or if security is enabled:
+
 `OpenBlockchain blockchain = new OpenBlockchain(server,port, enrollID, enrollSecret)`
-Then you can start using it ! For example :
+
+Then you can start using it ! For example:
+
 `BlockchainInfo info = blockchain.getBlockchainInfo()
 System.out.println(info.getHeight())`
-All the methods are explained in the [Javadoc](doc/index.html).
+
+All the methods are explained in the [Javadoc](doc/).
 
 ## Credits
 
