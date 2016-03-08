@@ -61,7 +61,7 @@ public class OpenBlockchain implements IOpenBlockchain {
      */
     public OpenBlockchain(String IP, int port) {
 
-        server = "http://" + IP + ":" + port;
+        server = IP + ":" + port;
         urlTools = new URLTools();
         useOpenSSL = false;
         alertJSONNotFound = true;
@@ -82,7 +82,7 @@ public class OpenBlockchain implements IOpenBlockchain {
      */
     public OpenBlockchain(String IP, int port, String enrollID, String enrollSecret) {
 
-        server = "https://" + IP + ":" + port;
+        server = IP + ":" + port;
         urlTools = new URLTools();
         useOpenSSL = false;
         alertJSONNotFound = true;
@@ -459,11 +459,22 @@ public class OpenBlockchain implements IOpenBlockchain {
      */
     private URL createURLRequest(String request) {
         URL url = null;
-        try {
-            url = new URL(server + request);
-        } catch (MalformedURLException e) {
-            e.printStackTrace();
+        
+        if (useOpenSSL){
+            try {
+                url = new URL("http://" + server + request);
+            } catch (MalformedURLException e) {
+                e.printStackTrace();
+            }
         }
+        else {
+            try {
+                url = new URL("https://" + server + request);
+            } catch (MalformedURLException e) {
+                e.printStackTrace();
+            }
+        }
+       
 
         return url;
     }

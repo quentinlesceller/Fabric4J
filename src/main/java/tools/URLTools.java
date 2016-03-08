@@ -123,6 +123,56 @@ public class URLTools {
     }
 
     /**
+     * Send delete.
+     *
+     * @param url
+     *            the url
+     * 
+     * @return the JSON object
+     */
+    public JSONObject sendDelete(URL url) {
+        JSONObject output = null;
+        HttpURLConnection con;
+        try {
+            con = (HttpURLConnection) url.openConnection();
+            try {
+                con.setRequestMethod("DELETE");
+                con.setDoOutput(true);
+
+                try {
+                    BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
+                    String inputLine;
+                    StringBuffer response = new StringBuffer();
+
+                    while ((inputLine = in.readLine()) != null) {
+                        response.append(inputLine);
+                    }
+                    in.close();
+
+                    try {
+                        output = new JSONObject(response.toString());
+                    } catch (JSONException e) {
+
+                        e.printStackTrace();
+                    }
+                } catch (IOException e) {
+
+                    e.printStackTrace();
+                }
+
+            } catch (ProtocolException e) {
+
+                e.printStackTrace();
+            }
+        } catch (IOException e) {
+
+            e.printStackTrace();
+        }
+        return output;
+
+    }
+
+    /**
      * Gets the httpsjson.
      *
      * @param url
@@ -133,7 +183,6 @@ public class URLTools {
      */
     public JSONObject getHTTPSJSON(URL url) {
         JSONObject json = null;
-
         HttpsURLConnection conn;
 
         InputStream is;
@@ -212,56 +261,6 @@ public class URLTools {
 
         // Send post request
 
-        return output;
-
-    }
-
-    /**
-     * Send delete.
-     *
-     * @param url
-     *            the url
-     * 
-     * @return the JSON object
-     */
-    public JSONObject sendDelete(URL url) {
-        JSONObject output = null;
-        HttpURLConnection con;
-        try {
-            con = (HttpURLConnection) url.openConnection();
-            try {
-                con.setRequestMethod("DELETE");
-                con.setDoOutput(true);
-
-                try {
-                    BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
-                    String inputLine;
-                    StringBuffer response = new StringBuffer();
-
-                    while ((inputLine = in.readLine()) != null) {
-                        response.append(inputLine);
-                    }
-                    in.close();
-
-                    try {
-                        output = new JSONObject(response.toString());
-                    } catch (JSONException e) {
-
-                        e.printStackTrace();
-                    }
-                } catch (IOException e) {
-
-                    e.printStackTrace();
-                }
-
-            } catch (ProtocolException e) {
-
-                e.printStackTrace();
-            }
-        } catch (IOException e) {
-
-            e.printStackTrace();
-        }
         return output;
 
     }
