@@ -31,7 +31,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Map;
 
-import objects.exceptions.JSONException;
+import objects.exception.JSONException;
 
 /**
  * A JSONArray is an ordered sequence of values. Its external text form is a

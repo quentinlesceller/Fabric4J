@@ -3,7 +3,7 @@ package tools;
 import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
 
-import objects.exceptions.JSONException;
+import objects.exception.JSONException;
 import objects.json.JSONObject;
 
 final class ParseUtil {

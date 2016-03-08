@@ -29,7 +29,7 @@ import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
 import java.util.*;
 
-import objects.exceptions.JSONException;
+import objects.exception.JSONException;
 
 /**
  * A JSONObject is an unordered collection of name/value pairs. Its

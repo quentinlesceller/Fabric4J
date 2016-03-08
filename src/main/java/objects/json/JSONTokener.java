@@ -2,7 +2,7 @@ package objects.json;
 
 import java.io.*;
 
-import objects.exceptions.JSONException;
+import objects.exception.JSONException;
 
 /*
 Copyright (c) 2002 JSON.org

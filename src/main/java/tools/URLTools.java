@@ -12,7 +12,7 @@ import java.net.URLConnection;
 
 import javax.net.ssl.HttpsURLConnection;
 
-import objects.exceptions.JSONException;
+import objects.exception.JSONException;
 import objects.json.JSONObject;
 import objects.json.JSONTokener;
 

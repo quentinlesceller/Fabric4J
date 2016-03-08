@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.Timestamp;
 
-import objects.exceptions.JSONException;
+import objects.exception.JSONException;
 import objects.json.JSONArray;
 import objects.json.JSONObject;
 import protos.Chaincode.ConfidentialityLevel;
