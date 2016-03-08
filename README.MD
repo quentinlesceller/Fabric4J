@@ -10,7 +10,7 @@ Add this project as maven dependency or simply import the jar located in the jar
 
 OBC4J is extremely simple to use, just start by declaring it:
 
-`OpenBlockchain blockchain = new OpenBlockchain(server,port)`
+`OpenBlockchain blockchain = new OpenBlockchain(server,port);`
 
 Or if security is enabled:
 
@@ -18,8 +18,9 @@ Or if security is enabled:
 
 Then you can start using it ! For example:
 
-`BlockchainInfo info = blockchain.getBlockchainInfo()
-System.out.println(info.getHeight())`
+`BlockchainInfo info = blockchain.getBlockchainInfo();
+
+System.out.println(info.getHeight());`
 
 All the methods are explained in the [Javadoc](doc/).
 
