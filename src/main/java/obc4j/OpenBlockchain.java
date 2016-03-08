@@ -462,14 +462,14 @@ public class OpenBlockchain implements IOpenBlockchain {
         
         if (useOpenSSL){
             try {
-                url = new URL("http://" + server + request);
+                url = new URL("https://" + server + request);
             } catch (MalformedURLException e) {
                 e.printStackTrace();
             }
         }
         else {
             try {
-                url = new URL("https://" + server + request);
+                url = new URL("http://" + server + request);
             } catch (MalformedURLException e) {
                 e.printStackTrace();
             }
