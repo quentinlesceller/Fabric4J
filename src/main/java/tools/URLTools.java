@@ -12,7 +12,6 @@ import java.net.URLConnection;
 
 import javax.net.ssl.HttpsURLConnection;
 
-import objects.exceptions.BlockchainException;
 import objects.exceptions.JSONException;
 import objects.json.JSONObject;
 import objects.json.JSONTokener;
@@ -41,7 +40,7 @@ public class URLTools {
      * @throws BlockchainException
      *             the blockchain exception
      */
-    public JSONObject getJSON(URL url) throws BlockchainException {
+    public JSONObject getJSON(URL url) {
 
         JSONObject json = null;
 
@@ -62,7 +61,6 @@ public class URLTools {
         } catch (IOException e) {
 
             e.printStackTrace();
-            throw new BlockchainException(url + " is not a valid OBC request.");
         }
 
         return json;
@@ -133,7 +131,7 @@ public class URLTools {
      * @throws BlockchainException
      *             the blockchain exception
      */
-    public JSONObject getHTTPSJSON(URL url) throws BlockchainException {
+    public JSONObject getHTTPSJSON(URL url) {
         JSONObject json = null;
 
         HttpsURLConnection conn;
@@ -153,7 +151,6 @@ public class URLTools {
         } catch (IOException e) {
 
             e.printStackTrace();
-            throw new BlockchainException(url + " is not a valid OBC request.");
         }
 
         return json;

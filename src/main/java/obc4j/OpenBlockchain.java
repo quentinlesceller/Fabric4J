@@ -7,7 +7,6 @@ import java.util.ArrayList;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.Timestamp;
 
-import objects.exceptions.BlockchainException;
 import objects.exceptions.JSONException;
 import objects.json.JSONArray;
 import objects.json.JSONObject;
@@ -24,7 +23,6 @@ import protos.Openchain.PeersMessage;
 import protos.Openchain.Transaction;
 import tools.URLTools;
 
-// TODO: Auto-generated Javadoc
 /**
  * The Class OpenBlockchain.
  * 
@@ -106,15 +104,10 @@ public class OpenBlockchain implements IOpenBlockchain {
 
         JSONObject blockJSON = null;
 
-        try {
-            if (useOpenSSL) {
-                blockJSON = urlTools.getHTTPSJSON(url);
-            } else {
-                blockJSON = urlTools.getJSON(url);
-            }
-
-        } catch (BlockchainException e) {
-            e.printStackTrace();
+        if (useOpenSSL) {
+            blockJSON = urlTools.getHTTPSJSON(url);
+        } else {
+            blockJSON = urlTools.getJSON(url);
         }
 
         protos.Openchain.Block.Builder blockBuilder = Openchain.Block.newBuilder();
@@ -200,14 +193,10 @@ public class OpenBlockchain implements IOpenBlockchain {
 
         JSONObject chainJSON = null;
 
-        try {
-            if (useOpenSSL) {
-                chainJSON = urlTools.getHTTPSJSON(url);
-            } else {
-                chainJSON = urlTools.getJSON(url);
-            }
-        } catch (BlockchainException e) {
-            e.printStackTrace();
+        if (useOpenSSL) {
+            chainJSON = urlTools.getHTTPSJSON(url);
+        } else {
+            chainJSON = urlTools.getJSON(url);
         }
 
         Builder blockchainInfoBuilder = BlockchainInfo.newBuilder();
@@ -399,14 +388,10 @@ public class OpenBlockchain implements IOpenBlockchain {
 
         JSONObject peersJSON = null;
 
-        try {
-            if (useOpenSSL) {
-                peersJSON = urlTools.getHTTPSJSON(url);
-            } else {
-                peersJSON = urlTools.getJSON(url);
-            }
-        } catch (BlockchainException e) {
-            e.printStackTrace();
+        if (useOpenSSL) {
+            peersJSON = urlTools.getHTTPSJSON(url);
+        } else {
+            peersJSON = urlTools.getJSON(url);
         }
 
         protos.Openchain.PeersMessage.Builder peersMessageBuilder = PeersMessage.newBuilder();
@@ -423,7 +408,7 @@ public class OpenBlockchain implements IOpenBlockchain {
             if (alertJSONNotFound)
                 e.printStackTrace();
         }
-
+        // TODO Not finished
         return null;
     }
 
@@ -438,11 +423,7 @@ public class OpenBlockchain implements IOpenBlockchain {
         URL url = createURLRequest(request);
         JSONObject transactionJSON = null;
 
-        try {
-            transactionJSON = urlTools.getJSON(url);
-        } catch (BlockchainException e) {
-            e.printStackTrace();
-        }
+        transactionJSON = urlTools.getJSON(url);
 
         return txBuilder(transactionJSON);
     }
@@ -790,7 +771,7 @@ public class OpenBlockchain implements IOpenBlockchain {
 
             JSONObject registrarJSON = null;
 
-            try {
+           
                 if (useOpenSSL) {
                     registrarJSON = urlTools.getHTTPSJSON(url);
                 } else {
@@ -805,9 +786,7 @@ public class OpenBlockchain implements IOpenBlockchain {
                     e.printStackTrace();
                 }
 
-            } catch (BlockchainException e) {
-                e.printStackTrace();
-            }
+          
 
         }
         return success;
@@ -828,7 +807,7 @@ public class OpenBlockchain implements IOpenBlockchain {
 
             JSONObject registrarJSON = null;
 
-            try {
+          
                 if (useOpenSSL) {
                     registrarJSON = urlTools.getHTTPSJSON(url);
                 } else {
@@ -842,9 +821,7 @@ public class OpenBlockchain implements IOpenBlockchain {
                     e.printStackTrace();
                 }
 
-            } catch (BlockchainException e) {
-                e.printStackTrace();
-            }
+          
 
         }
         return response;
