@@ -16,20 +16,12 @@ import objects.exception.JSONException;
 import objects.json.JSONObject;
 import objects.json.JSONTokener;
 
-// TODO: Auto-generated Javadoc
 /**
  * The Class URLTools.
  * 
  * @author Quentin Le Sceller
  */
 public class URLTools {
-
-    /**
-     * Instantiates a new URL tools.
-     */
-    public URLTools() {
-        HttpsURLConnection.setDefaultHostnameVerifier((hostname, session) -> hostname.equals("127.0.0.1"));
-    }
 
     /**
      * Gets the json.
