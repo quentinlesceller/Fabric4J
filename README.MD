@@ -1,6 +1,6 @@
-# OBC4j
+# Fabric4J
 
-OBC4J is a simple Java API for [IBM's Open Blockchain](https://github.com/openblockchain).
+Fabric4J is a simple Java API for [Fabric](https://github.com/hyperledger/fabric).
 
 ## Installation
 
@@ -8,13 +8,13 @@ Add this project as maven dependency or simply import the jar located in the jar
 
 ## Usage
 
-OBC4J is extremely simple to use, just start by declaring it:
+Fabric4J is extremely simple to use, just start by declaring it:
 
-`OpenBlockchain blockchain = new OpenBlockchain(server,port);`
+`Blockchain blockchain = new Blockchain(server,port);`
 
 Or if security is enabled:
 
-`OpenBlockchain blockchain = new OpenBlockchain(server,port, enrollID, enrollSecret)`
+`Blockchain blockchain = new Blockchain(server,port, enrollID, enrollSecret)`
 
 Then you can start using it ! For example:
 
@@ -26,7 +26,7 @@ All the methods are explained in the [Javadoc](doc/).
 
 ## Credits
 
-Thank to all IBM Open Blockchain developpers.
+Thank to all Hyperledger developpers.
 
 ## License
 

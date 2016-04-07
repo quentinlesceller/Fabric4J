@@ -1,4 +1,4 @@
-package obc4j;
+package fabric4j;
 
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -24,11 +24,11 @@ import protos.Openchain.Transaction;
 import tools.URLTools;
 
 /**
- * The Class OpenBlockchain.
+ * The Class Blockchain.
  * 
  * @author Quentin Le Sceller
  */
-public class OpenBlockchain implements IOpenBlockchain {
+public class Blockchain implements IBlockchain {
 
     /** The server. */
     private String server;
@@ -59,7 +59,7 @@ public class OpenBlockchain implements IOpenBlockchain {
      * @param port
      *            the port
      */
-    public OpenBlockchain(String IP, int port) {
+    public Blockchain(String IP, int port) {
 
         server = IP + ":" + port;
         urlTools = new URLTools();
@@ -80,7 +80,7 @@ public class OpenBlockchain implements IOpenBlockchain {
      * @param enrollSecret
      *            the enroll secret
      */
-    public OpenBlockchain(String IP, int port, String enrollID, String enrollSecret) {
+    public Blockchain(String IP, int port, String enrollID, String enrollSecret) {
 
         server = IP + ":" + port;
         urlTools = new URLTools();

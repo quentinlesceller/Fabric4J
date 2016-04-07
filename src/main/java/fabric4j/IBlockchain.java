@@ -1,4 +1,4 @@
-package obc4j;
+package fabric4j;
 
 
 import objects.json.JSONObject;
@@ -8,11 +8,11 @@ import protos.Openchain.PeersMessage;
 import protos.Openchain.Transaction;
 
 /**
- * The Interface IOpenBLockchain.
+ * The Interface IBLockchain.
  * 
  * @author Quentin Le Sceller
  */
-public interface IOpenBlockchain {
+public interface IBlockchain {
 
     /**
      * Gets the block.
